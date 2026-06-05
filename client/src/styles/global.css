@@ -10,3 +10,30 @@
 @import './fair-play.css';
 @import './settings.css';
 @import './responsive.css';
+
+.route-container {
+  position: relative;
+  min-height: calc(100vh - 84px);
+}
+
+.fade-enter {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 320ms ease, transform 320ms ease;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: translateY(-24px);
+  transition: opacity 260ms ease, transform 260ms ease;
+}
