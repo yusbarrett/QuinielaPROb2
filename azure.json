@@ -1,0 +1,22 @@
+{
+  "version": "2.0",
+  "builds": [
+    {
+      "src": "server/index.js",
+      "use": "@azure/nodejs-lts",
+      "config": {
+        "nodeVersion": "24-lts"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "server/index.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "client/build/$1"
+    }
+  ]
+}
