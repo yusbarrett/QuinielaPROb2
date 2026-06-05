@@ -1,0 +1,84 @@
+.fair-play-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.fp-card {
+  background: var(--wc-dark-card);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--wc-border);
+}
+
+.fp-card h2 {
+  color: var(--wc-gold);
+  margin-bottom: 1.25rem;
+  font-size: 1.3rem;
+}
+
+.fp-principles {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.fp-principle {
+  padding: 1rem;
+  background: rgba(200, 169, 97, 0.05);
+  border-radius: 8px;
+  border-left: 3px solid var(--wc-gold);
+}
+
+.fp-principle h3 {
+  color: var(--wc-gold);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.fp-principle p {
+  color: var(--wc-text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.fp-tiebreaker-list {
+  padding-left: 1.5rem;
+  color: var(--wc-text-secondary);
+  font-size: 0.9rem;
+  line-height: 2;
+}
+
+.fp-tiebreaker-list li {
+  margin-bottom: 0.25rem;
+}
+
+.discipline-rules {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.discipline-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(200, 169, 97, 0.05);
+  border-radius: 8px;
+}
+
+.discipline-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.discipline-item h4 {
+  color: var(--wc-gold);
+  margin-bottom: 0.25rem;
+}
+
+.discipline-item p {
+  color: var(--wc-text-secondary);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}

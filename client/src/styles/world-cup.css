@@ -1,0 +1,81 @@
+.group-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--wc-border);
+  border-radius: 8px;
+  background: var(--wc-dark-card);
+  color: var(--wc-text);
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all var(--transition);
+}
+
+.filter-btn:hover {
+  border-color: var(--wc-gold);
+  color: var(--wc-gold);
+}
+
+.filter-btn.active {
+  background: var(--wc-green);
+  border-color: var(--wc-gold);
+  color: var(--wc-gold);
+  font-weight: 600;
+}
+
+.group-section {
+  margin-bottom: 2rem;
+}
+
+.group-title {
+  font-size: 1.3rem;
+  color: var(--wc-gold);
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+  border-left: 3px solid var(--wc-gold);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.team-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: var(--wc-dark-card);
+  border-radius: 10px;
+  border: 1px solid var(--wc-border);
+  transition: all var(--transition);
+}
+
+.team-card:hover {
+  border-color: var(--wc-gold);
+  transform: translateX(4px);
+}
+
+.team-flag {
+  font-size: 2rem;
+}
+
+.team-name {
+  flex: 1;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.team-confederation {
+  font-size: 0.7rem;
+  color: var(--wc-text-secondary);
+  background: rgba(200, 169, 97, 0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: 10px;
+}

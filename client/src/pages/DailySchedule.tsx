@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useI18n } from '../i18n';
 
 interface Team {
   id: string;
@@ -24,6 +25,7 @@ interface Game {
 const GROUPS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'];
 
 const DailySchedule: React.FC = () => {
+  const { t, language } = useI18n();
   const [games, setGames] = useState<Game[]>([]);
   const [selectedGroup, setSelectedGroup] = useState<string>('all');
   const [selectedDate, setSelectedDate] = useState<string>('');
@@ -44,7 +46,7 @@ const DailySchedule: React.FC = () => {
 
   const formatDate = (dateStr: string) => {
     const d = new Date(dateStr);
-    return d.toLocaleDateString('en-US', {
+    return d.toLocaleDateString(language === 'es' ? 'es-ES' : 'en-US', {
       weekday: 'long',
       year: 'numeric',
       month: 'long',
@@ -54,32 +56,32 @@ const DailySchedule: React.FC = () => {
 
   const formatTime = (dateStr: string) => {
     const d = new Date(dateStr);
-    return d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+    return d.toLocaleTimeString(language === 'es' ? 'es-ES' : 'en-US', { hour: '2-digit', minute: '2-digit' });
   };
 
   const uniqueDates = [...new Set(games.map(g => g.date.split('T')[0]))].sort();
 
-  if (loading) return <div className="loading">Loading schedule...</div>;
+  if (loading) return <div className="loading">{t.common.loading}</div>;
 
   return (
     <div className="page">
-      <h1 className="page-title">Daily Schedule</h1>
-      <p className="page-subtitle">Complete match schedule for the FIFA World Cup 2026</p>
+      <h1 className="page-title">{t.dailySchedule.title}</h1>
+      <p className="page-subtitle">{t.dailySchedule.subtitle}</p>
 
       <div className="schedule-filters">
         <div className="filter-group">
-          <label>Group:</label>
+          <label>{t.dailySchedule.group}</label>
           <select value={selectedGroup} onChange={e => setSelectedGroup(e.target.value)}>
-            <option value="all">All Groups</option>
+            <option value="all">{t.dailySchedule.allGroups}</option>
             {GROUPS.map(g => (
-              <option key={g} value={g}>Group {g}</option>
+              <option key={g} value={g}>{t.worldCup.group} {g}</option>
             ))}
           </select>
         </div>
         <div className="filter-group">
-          <label>Date:</label>
+          <label>{t.dailySchedule.date}</label>
           <select value={selectedDate} onChange={e => setSelectedDate(e.target.value)}>
-            <option value="">All Dates</option>
+            <option value="">{t.dailySchedule.allDates}</option>
             {uniqueDates.map(d => (
               <option key={d} value={d}>{formatDate(d + 'T12:00:00Z')}</option>
             ))}
@@ -89,14 +91,14 @@ const DailySchedule: React.FC = () => {
 
       {filteredGames.length === 0 ? (
         <div className="empty-state">
-          <p>No matches found for the selected filters.</p>
+          <p>{t.dailySchedule.noMatches}</p>
         </div>
       ) : (
         <div className="schedule-list">
           {filteredGames.map(game => (
             <div key={game.id} className="match-card">
               <div className="match-header">
-                <span className="match-group">Group {game.group}</span>
+                <span className="match-group">{t.worldCup.group} {game.group}</span>
                 <span className="match-date">{formatDate(game.date)}</span>
               </div>
               <div className="match-body">
@@ -121,7 +123,7 @@ const DailySchedule: React.FC = () => {
               <div className="match-footer">
                 <span className="match-venue">🏟️ {game.venue}</span>
                 <span className="match-status">
-                  {game.status === 'completed' ? '✅ Finished' : '🕐 Upcoming'}
+                  {game.status === 'completed' ? `✅ ${t.dailySchedule.finished}` : `🕐 ${t.dailySchedule.upcoming}`}
                 </span>
               </div>
             </div>

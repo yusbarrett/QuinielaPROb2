@@ -1,17 +1,20 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-
-const menuItems = [
-  { path: '/', label: 'Home', icon: '🏠' },
-  { path: '/world-cup', label: 'World Cup', icon: '🏆' },
-  { path: '/daily-schedule', label: 'Daily Schedule', icon: '📅' },
-  { path: '/fair-play', label: 'Fair Play', icon: '⚽' },
-  { path: '/predictions', label: 'Predictions', icon: '🔮' },
-  { path: '/predictions-ranking', label: 'Predictions Ranking', icon: '📊' },
-  { path: '/settings', label: 'Settings', icon: '⚙️' },
-];
+import { useI18n } from '../i18n';
 
 const Sidebar: React.FC = () => {
+  const { t } = useI18n();
+
+  const menuItems = [
+    { path: '/', label: t.sidebar.home, icon: '🏠' },
+    { path: '/world-cup', label: t.sidebar.worldCup, icon: '🏆' },
+    { path: '/daily-schedule', label: t.sidebar.dailySchedule, icon: '📅' },
+    { path: '/fair-play', label: t.sidebar.fairPlay, icon: '⚽' },
+    { path: '/predictions', label: t.sidebar.predictions, icon: '🔮' },
+    { path: '/predictions-ranking', label: t.sidebar.predictionsRanking, icon: '📊' },
+    { path: '/settings', label: t.sidebar.settings, icon: '⚙️' },
+  ];
+
   return (
     <aside className="sidebar">
       <div className="sidebar-header">
@@ -34,8 +37,8 @@ const Sidebar: React.FC = () => {
         ))}
       </nav>
       <div className="sidebar-footer">
-        <p>USA 🇺🇸 MEX 🇲🇽 CAN 🇨🇦</p>
-        <p className="sidebar-footer-sub">June 11 - July 19, 2026</p>
+        <p>{t.sidebar.footer}</p>
+        <p className="sidebar-footer-sub">{t.sidebar.footerSub}</p>
       </div>
     </aside>
   );

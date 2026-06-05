@@ -1,0 +1,50 @@
+@media (max-width: 768px) {
+  .sidebar {
+    width: 70px;
+    padding: 1rem 0;
+  }
+
+  .sidebar-header {
+    padding: 0.5rem;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+
+  .sidebar-title,
+  .sidebar-label,
+  .sidebar-footer {
+    display: none;
+  }
+
+  .sidebar-link {
+    justify-content: center;
+    padding: 1rem 0.5rem;
+  }
+
+  .sidebar-icon {
+    font-size: 1.5rem;
+  }
+
+  .main-content {
+    margin-left: 70px;
+    padding: 1.5rem 1rem;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .match-body,
+  .prediction-body {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .match-team,
+  .pred-team {
+    justify-content: center !important;
+    flex-direction: row !important;
+  }
+}

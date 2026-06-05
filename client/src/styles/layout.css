@@ -1,0 +1,96 @@
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  margin-left: var(--sidebar-width);
+  flex: 1;
+  padding: 2rem 2.5rem;
+  min-height: 100vh;
+}
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--wc-gold);
+  margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+  color: var(--wc-text-secondary);
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 4rem;
+  font-size: 1.2rem;
+  color: var(--wc-gold);
+}
+
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  color: var(--wc-gold);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--wc-border);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.info-card {
+  background: var(--wc-dark-card);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--wc-border);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.info-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.highlight-card {
+  border-color: var(--wc-gold);
+  background: linear-gradient(135deg, var(--wc-dark-card) 0%, rgba(200, 169, 97, 0.1) 100%);
+}
+
+.info-card-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.info-card h3 {
+  color: var(--wc-gold);
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+}
+
+.info-card p {
+  color: var(--wc-text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: var(--wc-text-secondary);
+}

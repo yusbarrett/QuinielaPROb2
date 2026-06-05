@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useI18n } from '../i18n';
 
 interface Team {
   id: string;
@@ -40,6 +41,7 @@ interface Prediction {
 }
 
 const Predictions: React.FC = () => {
+  const { t, language } = useI18n();
   const [games, setGames] = useState<Game[]>([]);
   const [users, setUsers] = useState<User[]>([]);
   const [predictions, setPredictions] = useState<Prediction[]>([]);
@@ -72,23 +74,23 @@ const Predictions: React.FC = () => {
 
   const formatDate = (dateStr: string) => {
     const d = new Date(dateStr);
-    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    return d.toLocaleDateString(language === 'es' ? 'es-ES' : 'en-US', { month: 'short', day: 'numeric' });
   };
 
   const formatTime = (dateStr: string) => {
     const d = new Date(dateStr);
-    return d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+    return d.toLocaleTimeString(language === 'es' ? 'es-ES' : 'en-US', { hour: '2-digit', minute: '2-digit' });
   };
 
-  if (loading) return <div className="loading">Loading predictions...</div>;
+  if (loading) return <div className="loading">{t.predictions.loading}</div>;
 
   return (
     <div className="page">
-      <h1 className="page-title">Predictions</h1>
-      <p className="page-subtitle">Make your predictions for World Cup 2026 matches</p>
+      <h1 className="page-title">{t.predictions.title}</h1>
+      <p className="page-subtitle">{t.predictions.subtitle}</p>
 
       <div className="user-selector">
-        <label>Select User:</label>
+        <label>{t.predictions.selectUser}</label>
         <select value={selectedUser} onChange={e => setSelectedUser(e.target.value)}>
           {users.map(u => (
             <option key={u.id} value={u.id}>{u.avatar} {u.username}</option>
@@ -102,7 +104,7 @@ const Predictions: React.FC = () => {
           return (
             <div key={game.id} className="prediction-card">
               <div className="prediction-header">
-                <span className="pred-group">Group {game.group}</span>
+                <span className="pred-group">{t.predictions.group} {game.group}</span>
                 <span className="pred-date">{formatDate(game.date)} • {formatTime(game.date)}</span>
               </div>
               <div className="prediction-body">
@@ -116,7 +118,7 @@ const Predictions: React.FC = () => {
                       {pred.homeScore} - {pred.awayScore}
                     </span>
                   ) : (
-                    <span className="pred-no-score">No prediction</span>
+                    <span className="pred-no-score">{t.predictions.noPrediction}</span>
                   )}
                 </div>
                 <div className="pred-team">
@@ -127,7 +129,7 @@ const Predictions: React.FC = () => {
               <div className="prediction-footer">
                 <span className="pred-venue">🏟️ {game.venue}</span>
                 {pred && pred.points > 0 && (
-                  <span className="pred-points">+{pred.points} pts</span>
+                  <span className="pred-points">+{pred.points} {t.predictions.points}</span>
                 )}
               </div>
             </div>

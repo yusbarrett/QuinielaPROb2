@@ -1,31 +1,32 @@
 import React, { useState } from 'react';
 import { ThemeContext } from '../components/ThemeContext';
+import { useI18n } from '../i18n';
 
 const Settings: React.FC = () => {
   const { darkMode, toggleDarkMode } = React.useContext(ThemeContext);
-  const [language, setLanguage] = useState('en');
+  const { t, language, setLanguage } = useI18n();
   const [username, setUsername] = useState('');
 
   return (
     <div className="page">
-      <h1 className="page-title">Settings</h1>
-      <p className="page-subtitle">Customize your Quiniela World Cup 2026 experience</p>
+      <h1 className="page-title">{t.settings.title}</h1>
+      <p className="page-subtitle">{t.settings.subtitle}</p>
 
       <div className="settings-sections">
         <div className="settings-card">
-          <h2>👤 User Profile</h2>
+          <h2>{t.settings.profile}</h2>
           <div className="setting-item">
-            <label>Username</label>
+            <label>{t.settings.username}</label>
             <input
               type="text"
               value={username}
               onChange={e => setUsername(e.target.value)}
-              placeholder="Enter your username"
+              placeholder={t.settings.usernamePlaceholder}
               className="setting-input"
             />
           </div>
           <div className="setting-item">
-            <label>Avatar</label>
+            <label>{t.settings.avatar}</label>
             <div className="avatar-selector">
               {['🦆', '🦅', '🦉', '🐻', '🐺', '🦁', '🐯', '🦊', '🐍', '🐉', '🦄', '🐧'].map(a => (
                 <button
@@ -41,51 +42,49 @@ const Settings: React.FC = () => {
         </div>
 
         <div className="settings-card">
-          <h2>🎨 Appearance</h2>
+          <h2>{t.settings.appearance}</h2>
           <div className="setting-item">
-            <label>Theme</label>
+            <label>{t.settings.theme}</label>
             <div className="theme-toggle">
               <button
                 className={`theme-btn ${!darkMode ? 'active' : ''}`}
                 onClick={() => { if (darkMode) toggleDarkMode(); }}
               >
-                ☀️ Light
+                {t.settings.light}
               </button>
               <button
                 className={`theme-btn ${darkMode ? 'active' : ''}`}
                 onClick={() => { if (!darkMode) toggleDarkMode(); }}
               >
-                🌙 Dark
+                {t.settings.dark}
               </button>
             </div>
           </div>
         </div>
 
         <div className="settings-card">
-          <h2>🌐 Language</h2>
+          <h2>{t.settings.language}</h2>
           <div className="setting-item">
-            <label>Display Language</label>
+            <label>{t.settings.displayLanguage}</label>
             <select
               value={language}
-              onChange={e => setLanguage(e.target.value)}
+              onChange={e => setLanguage(e.target.value as 'en' | 'es')}
               className="setting-select"
             >
               <option value="en">English</option>
               <option value="es">Español</option>
-              <option value="pt">Português</option>
-              <option value="fr">Français</option>
             </select>
           </div>
         </div>
 
         <div className="settings-card">
-          <h2>ℹ️ About</h2>
+          <h2>{t.settings.about}</h2>
           <div className="about-info">
-            <p><strong>Quiniela World Cup 2026</strong></p>
-            <p>Version 1.0.0</p>
-            <p>A prediction game for the FIFA World Cup 2026</p>
-            <p>Hosted in USA, Mexico &amp; Canada</p>
-            <p>June 11 – July 19, 2026</p>
+            <p><strong>{t.settings.aboutName}</strong></p>
+            <p>{t.settings.aboutVersion}</p>
+            <p>{t.settings.aboutDesc}</p>
+            <p>{t.settings.aboutHosted}</p>
+            <p>{t.settings.aboutDates}</p>
           </div>
         </div>
       </div>

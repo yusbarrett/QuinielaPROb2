@@ -1,0 +1,83 @@
+.ranking-table-container {
+  margin-bottom: 2rem;
+}
+
+.ranking-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--wc-dark-card);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--wc-border);
+}
+
+.ranking-table thead tr {
+  background: rgba(26, 71, 42, 0.5);
+}
+
+.ranking-table th {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  color: var(--wc-gold);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ranking-table td {
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--wc-border);
+}
+
+.ranking-row.top-three {
+  background: rgba(200, 169, 97, 0.08);
+}
+
+.ranking-row:hover {
+  background: rgba(200, 169, 97, 0.05);
+}
+
+.ranking-position {
+  font-size: 1.2rem;
+  font-weight: 700;
+  width: 60px;
+}
+
+.ranking-user {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ranking-avatar {
+  font-size: 1.5rem;
+}
+
+.ranking-username {
+  font-weight: 600;
+}
+
+.ranking-points {
+  font-weight: 700;
+  color: var(--wc-gold);
+  font-size: 1.1rem;
+}
+
+.ranking-info {
+  margin-top: 2rem;
+}
+
+.ranking-info .info-card h3 {
+  margin-bottom: 0.75rem;
+}
+
+.ranking-info .info-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ranking-info .info-card ul li {
+  padding: 0.4rem 0;
+  color: var(--wc-text-secondary);
+  font-size: 0.9rem;
+}

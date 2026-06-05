@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useI18n } from '../i18n';
 
 interface RankingUser {
   id: string;
@@ -10,6 +11,7 @@ interface RankingUser {
 }
 
 const PredictionsRanking: React.FC = () => {
+  const { t } = useI18n();
   const [rankings, setRankings] = useState<RankingUser[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -27,21 +29,21 @@ const PredictionsRanking: React.FC = () => {
     return `#${position}`;
   };
 
-  if (loading) return <div className="loading">Loading rankings...</div>;
+  if (loading) return <div className="loading">{t.predictionsRanking.loading}</div>;
 
   return (
     <div className="page">
-      <h1 className="page-title">Predictions Ranking</h1>
-      <p className="page-subtitle">See who is the best at predicting World Cup 2026 results</p>
+      <h1 className="page-title">{t.predictionsRanking.title}</h1>
+      <p className="page-subtitle">{t.predictionsRanking.subtitle}</p>
 
       <div className="ranking-table-container">
         <table className="ranking-table">
           <thead>
             <tr>
-              <th>Position</th>
-              <th>Player</th>
-              <th>Predictions</th>
-              <th>Points</th>
+              <th>{t.predictionsRanking.position}</th>
+              <th>{t.predictionsRanking.player}</th>
+              <th>{t.predictionsRanking.predictions}</th>
+              <th>{t.predictionsRanking.points}</th>
             </tr>
           </thead>
           <tbody>
@@ -62,11 +64,11 @@ const PredictionsRanking: React.FC = () => {
 
       <div className="ranking-info">
         <div className="info-card">
-          <h3>Points System</h3>
+          <h3>{t.predictionsRanking.pointsSystem}</h3>
           <ul>
-            <li>Exact score: <strong>3 points</strong></li>
-            <li>Correct winner (not exact score): <strong>1 point</strong></li>
-            <li>Wrong prediction: <strong>0 points</strong></li>
+            <li>{t.predictionsRanking.exactScore}: <strong>3 {t.predictionsRanking.points}</strong></li>
+            <li>{t.predictionsRanking.correctWinner}: <strong>1 {t.predictionsRanking.points}</strong></li>
+            <li>{t.predictionsRanking.wrongPrediction}: <strong>0 {t.predictionsRanking.points}</strong></li>
           </ul>
         </div>
       </div>

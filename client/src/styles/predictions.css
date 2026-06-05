@@ -1,0 +1,39 @@
+.pred-score-display {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--wc-gold);
+}
+
+.pred-no-score {
+  font-size: 0.85rem;
+  color: var(--wc-text-secondary);
+  font-style: italic;
+}
+
+.pred-points {
+  font-size: 0.85rem;
+  color: var(--wc-accent);
+  font-weight: 600;
+}
+
+.user-selector {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-selector label {
+  font-weight: 600;
+  color: var(--wc-text-secondary);
+}
+
+.user-selector select {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--wc-border);
+  border-radius: 8px;
+  background: var(--wc-dark-card);
+  color: var(--wc-text);
+  font-size: 0.95rem;
+  min-width: 200px;
+}
