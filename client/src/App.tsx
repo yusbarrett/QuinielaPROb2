@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import {
   ThemeProvider,
@@ -17,6 +17,8 @@ import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Sidebar from './components/Sidebar';
 import Home from './pages/Home';
+
+const drawerWidth = 280;
 import WorldCup from './pages/WorldCup';
 import DailySchedule from './pages/DailySchedule';
 import FairPlay from './pages/FairPlay';
@@ -52,6 +54,7 @@ const App: React.FC = () => {
 
   const location = useLocation();
   const isDesktop = useMediaQuery(theme.breakpoints.up('sm'));
+  const routeRef = useRef<HTMLDivElement>(null);
 
   const toggleDarkMode = () => setDarkMode(prev => !prev);
   const handleDrawerToggle = () => setMobileOpen(open => !open);
@@ -63,7 +66,7 @@ const App: React.FC = () => {
         <CssBaseline />
         <Box sx={{ display: 'flex', minHeight: '100vh', bgcolor: 'background.default', color: 'text.primary' }}>
           <Sidebar mobileOpen={mobileOpen} onMobileClose={handleCloseDrawer} />
-          <Box component="main" sx={{ flexGrow: 1, width: { sm: `calc(100% - 280px)` } }}>
+          <Box component="main" sx={{ flexGrow: 1, ml: { sm: `${drawerWidth}px` }, minHeight: '100vh', bgcolor: 'background.default' }}>
             <AppBar position="sticky" color="inherit" elevation={0} sx={{ borderBottom: 1, borderColor: 'divider', bgcolor: 'background.paper' }}>
               <Toolbar>
                 {!isDesktop && (
@@ -81,8 +84,8 @@ const App: React.FC = () => {
             </AppBar>
             <Box sx={{ p: { xs: 2, sm: 3 } }}>
               <TransitionGroup>
-                <CSSTransition key={location.pathname} classNames="fade" timeout={320}>
-                  <Box className="route-container">
+                <CSSTransition key={location.pathname} nodeRef={routeRef} classNames="fade" timeout={320}>
+                  <Box ref={routeRef} className="route-container">
                     <Routes location={location}>
                       <Route path="/" element={<Home />} />
                       <Route path="/world-cup" element={<WorldCup />} />

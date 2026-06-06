@@ -6,7 +6,19 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--wc-dark);
   color: var(--wc-text);
   transition: background-color var(--transition), color var(--transition);
+  background-color: var(--wc-dark);
+  background-image: linear-gradient(180deg, rgba(15, 23, 42, 0.95) 0%, rgba(3, 12, 27, 0.96) 100%), url('https://images.unsplash.com/photo-1517927033932-b7dd4c0c0f2c?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at top left, rgba(200, 169, 97, 0.18), transparent 24%), radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.08), transparent 25%);
 }

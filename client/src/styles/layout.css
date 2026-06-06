@@ -13,13 +13,93 @@
 .page {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 2rem;
+  background: rgba(8, 18, 35, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 36px 80px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(18px);
 }
 
 .page-title {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 700;
   color: var(--wc-gold);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: 320px;
+  margin-bottom: 2rem;
+  background-image: linear-gradient(180deg, rgba(4, 12, 25, 0.15), rgba(4, 12, 25, 0.85)), url('https://images.unsplash.com/photo-1517927033932-b7dd4c0c0f2c?auto=format&fit=crop&w=1200&q=80');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+}
+
+.hero-badge,
+.hero-title,
+.hero-subtitle,
+.hero-dates {
+  color: #fff;
+}
+
+.hero-badge {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  line-height: 1.05;
+  margin-bottom: 0.75rem;
+}
+
+.hero-subtitle,
+.hero-dates {
+  opacity: 0.9;
+  max-width: 700px;
+}
+
+.section {
+  margin-bottom: 2.5rem;
+  padding: 1.75rem;
+  border-radius: 20px;
+  background: rgba(18, 31, 52, 0.76);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.info-card {
+  background: linear-gradient(135deg, rgba(36, 52, 71, 0.96), rgba(24, 38, 62, 0.92));
+}
+
+.info-card-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  background: rgba(200, 169, 97, 0.12);
+}
+
+.section-title {
+  font-size: 1.65rem;
+  color: var(--wc-gold);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(200, 169, 97, 0.22);
 }
 
 .page-subtitle {
