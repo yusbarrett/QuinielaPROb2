@@ -1,3 +1,18 @@
+.fair-play-hero {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: 280px;
+  margin-bottom: 2rem;
+  background-image: linear-gradient(180deg, rgba(4, 12, 25, 0.15), rgba(4, 12, 25, 0.85)), url('/images/heroes/fair-play-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+  color: white;
+}
+
 .fair-play-section {
   display: flex;
   flex-direction: column;

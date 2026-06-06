@@ -34,7 +34,7 @@
   overflow: hidden;
   min-height: 320px;
   margin-bottom: 2rem;
-  background-image: linear-gradient(180deg, rgba(4, 12, 25, 0.15), rgba(4, 12, 25, 0.85)), url('https://images.unsplash.com/photo-1517927033932-b7dd4c0c0f2c?auto=format&fit=crop&w=1200&q=80');
+  background-image: linear-gradient(180deg, rgba(4, 12, 25, 0.15), rgba(4, 12, 25, 0.85)), url('/images/heroes/home-hero.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
