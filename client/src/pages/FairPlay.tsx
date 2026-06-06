@@ -6,8 +6,12 @@ const FairPlay: React.FC = () => {
 
   return (
     <div className="page">
-      <h1 className="page-title">{t.fairPlay.title}</h1>
-      <p className="page-subtitle">{t.fairPlay.subtitle}</p>
+      <div className="hero fair-play-hero">
+        <div>
+          <h1 className="hero-title">{t.fairPlay.title}</h1>
+          <p className="hero-subtitle">{t.fairPlay.subtitle}</p>
+        </div>
+      </div>
 
       <div className="fair-play-section">
         <div className="fp-card">

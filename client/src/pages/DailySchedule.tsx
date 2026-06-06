@@ -65,8 +65,12 @@ const DailySchedule: React.FC = () => {
 
   return (
     <div className="page">
-      <h1 className="page-title">{t.dailySchedule.title}</h1>
-      <p className="page-subtitle">{t.dailySchedule.subtitle}</p>
+      <div className="hero schedule-hero">
+        <div>
+          <h1 className="hero-title">{t.dailySchedule.title}</h1>
+          <p className="hero-subtitle">{t.dailySchedule.subtitle}</p>
+        </div>
+      </div>
 
       <div className="schedule-filters">
         <div className="filter-group">

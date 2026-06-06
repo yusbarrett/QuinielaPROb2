@@ -32,8 +32,12 @@ const WorldCup: React.FC = () => {
 
   return (
     <div className="page">
-      <h1 className="page-title">{t.worldCup.title}</h1>
-      <p className="page-subtitle">{t.worldCup.subtitle}</p>
+      <div className="hero world-cup-hero">
+        <div>
+          <h1 className="hero-title">{t.worldCup.title}</h1>
+          <p className="hero-subtitle">{t.worldCup.subtitle}</p>
+        </div>
+      </div>
 
       <div className="group-filter">
         <button

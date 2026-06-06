@@ -9,8 +9,12 @@ const Settings: React.FC = () => {
 
   return (
     <div className="page">
-      <h1 className="page-title">{t.settings.title}</h1>
-      <p className="page-subtitle">{t.settings.subtitle}</p>
+      <div className="hero settings-hero">
+        <div>
+          <h1 className="hero-title">{t.settings.title}</h1>
+          <p className="hero-subtitle">{t.settings.subtitle}</p>
+        </div>
+      </div>
 
       <div className="settings-sections">
         <div className="settings-card">

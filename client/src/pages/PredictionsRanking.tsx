@@ -33,8 +33,12 @@ const PredictionsRanking: React.FC = () => {
 
   return (
     <div className="page">
-      <h1 className="page-title">{t.predictionsRanking.title}</h1>
-      <p className="page-subtitle">{t.predictionsRanking.subtitle}</p>
+      <div className="hero ranking-hero">
+        <div>
+          <h1 className="hero-title">{t.predictionsRanking.title}</h1>
+          <p className="hero-subtitle">{t.predictionsRanking.subtitle}</p>
+        </div>
+      </div>
 
       <div className="ranking-table-container">
         <table className="ranking-table">

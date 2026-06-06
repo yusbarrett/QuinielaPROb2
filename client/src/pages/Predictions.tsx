@@ -86,8 +86,12 @@ const Predictions: React.FC = () => {
 
   return (
     <div className="page">
-      <h1 className="page-title">{t.predictions.title}</h1>
-      <p className="page-subtitle">{t.predictions.subtitle}</p>
+      <div className="hero predictions-hero">
+        <div>
+          <h1 className="hero-title">{t.predictions.title}</h1>
+          <p className="hero-subtitle">{t.predictions.subtitle}</p>
+        </div>
+      </div>
 
       <div className="user-selector">
         <label>{t.predictions.selectUser}</label>
